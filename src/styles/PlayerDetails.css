@@ -1,0 +1,30 @@
+.PlayerDetails {
+    box-shadow: 0 0 3px rgb(10 10 10 40%);
+    border-radius: 1px;
+    margin: 13px 0 0 0;
+}
+
+.player-details-content {
+    background: #2E3740;
+    position: relative;
+    padding: 8px;
+}
+
+.player-details-primary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: inherit;
+}
+
+.player-details-secondary {
+    background: inherit;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    margin-top: 0;
+}
+
+.player-details-interactive {
+    background: inherit;
+}

@@ -1,0 +1,9 @@
+* {
+    margin: 0 auto;
+    max-width: 1920px;
+    font-size: 14px;
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    background: #1C242D;
+    color: white;
+    vertical-align: baseline;
+}

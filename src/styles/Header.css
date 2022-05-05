@@ -1,0 +1,11 @@
+.Header {
+    background-color: #242F39;
+    vertical-align: top;
+    position: relative;
+}
+
+.Header .inner-header {
+    background-color: transparent;
+    margin: auto;
+    max-width: 1200px;
+}
