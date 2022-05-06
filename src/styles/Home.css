@@ -1,0 +1,18 @@
+.Home {
+    margin: auto;
+    width: 600px;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Home > input {
+    height: 20px;
+    margin: 5px;
+}
+
+.Home > a {
+    height: 20px;
+    margin: 5px;
+}

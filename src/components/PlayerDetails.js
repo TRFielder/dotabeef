@@ -1,6 +1,9 @@
 import '../styles/PlayerDetails.css'
+import { useParams } from 'react-router-dom'
 
 function PlayerDetails() {
+  const { ID } = useParams()
+  console.log(ID)
   return (
     <div className="PlayerDetails">
       <div className="player-details-content">
@@ -12,7 +15,9 @@ function PlayerDetails() {
               src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/db/db9b7b9b1909b313e961edc64915782bd13fd34d_full.jpg"
             ></img>
           </div>
-          <div className="player-details-name">Tom</div>
+          <div className="player-details-name">
+            {`This is player number ${ID}`}
+          </div>
         </div>
         <div className="player-details-secondary">45</div>
         <div className="player-details-interactive">6</div>

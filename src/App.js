@@ -1,17 +1,17 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
+import Home from './components/Home'
 import PlayerDetails from './components/PlayerDetails'
 
 function App() {
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>Dotabeef</title>
-      </Helmet>
+    <HashRouter>
       <Header />
-      <PlayerDetails />
-      <div className="App">Hello!</div>
-    </HelmetProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="players/:ID" element={<PlayerDetails />} />
+      </Routes>
+    </HashRouter>
   )
 }
 
