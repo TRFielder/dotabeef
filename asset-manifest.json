@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dotabeef/static/css/main.64bf814e.css",
+    "main.js": "/dotabeef/static/js/main.d133517f.js",
+    "index.html": "/dotabeef/index.html",
+    "main.64bf814e.css.map": "/dotabeef/static/css/main.64bf814e.css.map",
+    "main.d133517f.js.map": "/dotabeef/static/js/main.d133517f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64bf814e.css",
+    "static/js/main.d133517f.js"
+  ]
+}
