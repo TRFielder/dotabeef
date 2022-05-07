@@ -1,12 +1,11 @@
 import '../styles/Header.css'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <div className="Header">
       <div className="inner-header">
-        <a className="nav-header-logo" href="#">
-          Dotabeef
-        </a>
+        <Link to="/">Dotabeef</Link>
       </div>
     </div>
   )
