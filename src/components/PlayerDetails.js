@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom'
 
 function PlayerDetails() {
   const { ID } = useParams()
-  console.log(ID)
   return (
     <div className="PlayerDetails">
       <div className="player-details-content">

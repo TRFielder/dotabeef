@@ -1,5 +1,5 @@
 .PlayerDetails {
-    box-shadow: 0 0 3px rgb(10 10 10 40%);
+    box-shadow: 0 0 3px rgb(10 10 10 / 40%);
     border-radius: 1px;
     margin: 13px 0 0 0;
 }
