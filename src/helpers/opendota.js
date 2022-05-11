@@ -1,7 +1,4 @@
-/* Functions for the open dota API go here
-
-get win loss /players/{account_id}/wl
-*/
+// Functions for the open dota API go here
 
 const getPlayersByName = async (name) => {
   const response = await fetch(`https://api.opendota.com/api/search?q=${name}`)

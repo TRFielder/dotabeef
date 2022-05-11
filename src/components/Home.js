@@ -1,19 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import '../styles/Home.css'
-import * as opendota from '../helpers/opendota'
 
 function Home() {
-  const [ID, setID] = useState(null)
+  const [Name, setName] = useState('Dendi')
 
-  opendota.getPlayersByName('Tom')
   const handleChangeInput = (e) => {
-    setID(e.target.value)
+    setName(e.target.value)
   }
   return (
     <div className="Home">
       <input type="text" onChange={handleChangeInput}></input>
-      <Link to={`/players/${ID}`}>
+      <Link to={`/search/${Name}`}>
         <button type="submit">Search ID</button>
       </Link>
     </div>
