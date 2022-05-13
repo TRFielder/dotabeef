@@ -86,7 +86,7 @@ function PlayerBanner() {
               <dt>Win Rate</dt>
             </dl>
           </div>
-          <div className="player-details-interactive">6</div>
+          <div className="player-details-interactive"></div>
         </div>
       ) : (
         'Loading'

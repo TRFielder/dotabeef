@@ -27,10 +27,8 @@ function MostPlayedHeroes() {
     })
   }, [MostPlayed])
 
-  const getHeroByID = (heroID) => {
-    console.log(`Searching for hero id: ${heroID}`)
+  const getHeroByID = () => {
     const result = Heroes[2]
-    console.log(result)
     return result
   }
 
@@ -42,7 +40,8 @@ function MostPlayedHeroes() {
         </header>
         <article>
           <div className="r-table r-only-mobile-5 heroes-overview">
-            {MostPlayedTable.length !== 0
+            {
+              /* MostPlayedTable.length !== 0
               ? MostPlayed.map((hero) => (
                   <div className="r-row" key={hero.hero_id}>
                     <div className="r-body">
@@ -52,7 +51,8 @@ function MostPlayedHeroes() {
                     </div>
                   </div>
                 ))
-              : 'Still loading'}
+              : */ 'Still loading'
+            }
           </div>
         </article>
       </section>
