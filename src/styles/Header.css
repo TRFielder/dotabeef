@@ -2,10 +2,24 @@
     background-color: #242F39;
     vertical-align: top;
     position: relative;
+    background: inherit;
 }
 
 .Header .inner-header {
+    background: inherit;
     background-color: transparent;
     margin: auto;
     max-width: 1200px;
+}
+
+.header-nav-logo {
+    background: #ED3B1C;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    height: 20px;
+    margin: 0 8px 0 0;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    vertical-align: top;
 }

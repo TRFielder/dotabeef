@@ -1,9 +1,37 @@
 * {
     margin: 0 auto;
-    max-width: 1920px;
+    max-width: 1200px;
     font-size: 14px;
     font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
     background: #1C242D;
     color: white;
     vertical-align: baseline;
+}
+
+div {
+    background: inherit;
+}
+
+h1 {
+    background: inherit;
+}
+
+small {
+    background: inherit;
+}
+
+dl {
+    background: inherit;
+}
+
+dd {
+    background: inherit;
+}
+
+dt {
+    background: inherit;
+}
+
+span {
+    background: inherit;
 }

@@ -17,6 +17,28 @@
     background: inherit;
 }
 
+.player-details-avatar{
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: top;
+}
+
+.player-details-title {
+    display: inline-block;
+    vertical-align: top;
+    background: inherit;
+}
+
+.player-details-title > h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.player-image.avatar {
+    width: 65px;
+    height: 65px;
+}
+
 .player-details-secondary {
     background: inherit;
     position: absolute;
@@ -25,6 +47,30 @@
     margin-top: 0;
 }
 
+.player-details-secondary > dl {
+    display: inline-block;
+    margin: 5px 12px 14px 0;
+    vertical-align: top;
+}
+
+.player-details-secondary > dl > dt {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 4px;
+    text-transform: uppercase;
+}
+
 .player-details-interactive {
     background: inherit;
+}
+
+.wins {
+    color: #A9CF54;
+}
+
+.losses {
+    color: #C23C2A
+}
+.abandons {
+    color: #979797;
 }

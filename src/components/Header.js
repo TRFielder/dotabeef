@@ -5,7 +5,9 @@ function Header() {
   return (
     <div className="Header">
       <div className="inner-header">
-        <Link to="/">Dotabeef</Link>
+        <Link to="/">
+          <p className="header-nav-logo">Dotabeef</p>
+        </Link>
       </div>
     </div>
   )

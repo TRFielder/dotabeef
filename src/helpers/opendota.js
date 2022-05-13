@@ -38,4 +38,18 @@ const getPlayerWinLoss = async (accountID) => {
   return data
 }
 
-export { getPlayersByName, getPlayerData, getRecentMatches, getPlayerWinLoss }
+const getPlayerCounts = async (accountID) => {
+  const response = await fetch(
+    `https://api.opendota.com/api/players/${accountID}/counts`,
+  )
+  const data = await response.json()
+  return data
+}
+
+export {
+  getPlayersByName,
+  getPlayerData,
+  getRecentMatches,
+  getPlayerWinLoss,
+  getPlayerCounts,
+}
