@@ -1,9 +1,9 @@
-import '../styles/PlayerDetails.css'
+import '../../styles/PlayerBanner.css'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import * as opendota from '../helpers/opendota'
+import * as opendota from '../../helpers/opendota'
 
-function PlayerDetails() {
+function PlayerBanner() {
   const [Player, setPlayer] = useState(null)
   const [WinLoss, setWinLoss] = useState(null)
   const [Counts, setCounts] = useState(null)
@@ -33,8 +33,9 @@ function PlayerDetails() {
     const lastMatchMs = lastMatchUnix * 1000
     const lastMatch = new Date(lastMatchMs)
     const today = new Date()
-    const timeDiff = Math.round((today - lastMatch) / (1000 * 3600 * 24))
-    return timeDiff >= 1 ? `${timeDiff} days ago` : `Today`
+    const dayDiff = Math.round((today - lastMatch) / (1000 * 3600 * 24))
+    const hourDiff = Math.round((today - lastMatch) / (1000 * 3600))
+    return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
   }
 
   const getAbandons = () =>
@@ -94,4 +95,4 @@ function PlayerDetails() {
   )
 }
 
-export default PlayerDetails
+export default PlayerBanner

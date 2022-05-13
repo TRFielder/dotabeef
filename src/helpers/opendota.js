@@ -46,10 +46,26 @@ const getPlayerCounts = async (accountID) => {
   return data
 }
 
+const getMostPlayedHeroes = async (accountID) => {
+  const response = await fetch(
+    `https://api.opendota.com/api/players/${accountID}/heroes?sort=games`,
+  )
+  const data = await response.json()
+  return data
+}
+
+const getHeroes = async () => {
+  const response = await fetch(`https://api.opendota.com/api/heroes `)
+  const data = await response.json()
+  return data
+}
+
 export {
   getPlayersByName,
   getPlayerData,
   getRecentMatches,
   getPlayerWinLoss,
   getPlayerCounts,
+  getMostPlayedHeroes,
+  getHeroes,
 }

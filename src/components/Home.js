@@ -12,7 +12,7 @@ function Home() {
     <div className="Home">
       <input type="text" onChange={handleChangeInput}></input>
       <Link to={`/search/${Name}`}>
-        <button type="submit">Search ID</button>
+        <button type="submit">Search by name</button>
       </Link>
     </div>
   )

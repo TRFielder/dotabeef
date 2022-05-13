@@ -35,3 +35,12 @@ dt {
 span {
     background: inherit;
 }
+
+article {
+    background: #242F39;
+    box-shadow: 0 0 3px rgba(10, 10, 10, 0.4);
+    border: 1px solid #242F39;
+    border-radius: 1px;
+    padding: 4px;
+    clear: right;
+}
