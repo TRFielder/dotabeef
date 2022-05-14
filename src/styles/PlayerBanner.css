@@ -60,6 +60,12 @@
     text-transform: uppercase;
 }
 
+@media only screen and (max-width: 768px) {
+    .player-details-secondary > .player-details-counts {
+        display: none;
+    }
+}
+
 .player-details-interactive {
     background: inherit;
 }
@@ -73,4 +79,8 @@
 }
 .abandons {
     color: #979797;
+}
+
+.game-record > span {
+    padding: 0 1px;
 }

@@ -1,3 +1,17 @@
 .friendInfo {
     text-align: center;
+    display: flex;
+}
+
+.friendInfo > a, .friendInfo > img {
+    margin: auto;
+}
+
+td > a {
+    text-decoration: none;
+    color: #A9CF54
+}
+
+.r-table.RecentFriends > th {
+    text-align: center;
 }

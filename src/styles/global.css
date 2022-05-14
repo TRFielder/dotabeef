@@ -18,7 +18,6 @@ article {
     border: 1px solid #242F39;
     border-radius: 1px;
     padding: 4px;
-    clear: right;
 }
 
 section header {
@@ -44,3 +43,6 @@ td {
     padding: 4px;
 }
 
+tr {
+    padding: 4px;
+}

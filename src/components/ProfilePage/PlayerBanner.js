@@ -65,7 +65,7 @@ function PlayerBanner() {
               </dd>
               <dt>Last Match</dt>
             </dl>
-            <dl>
+            <dl className="player-details-counts">
               <dd>
                 <span className="game-record">
                   <span className="wins">{WinLoss.win}</span>
@@ -77,7 +77,7 @@ function PlayerBanner() {
               </dd>
               <dt>Record</dt>
             </dl>
-            <dl>
+            <dl className="player-details-winrate">
               <dd>{`${
                 Math.round(
                   (WinLoss.win / (WinLoss.win + WinLoss.lose)) * 100 * 100,
