@@ -44,3 +44,25 @@ article {
     padding: 4px;
     clear: right;
 }
+
+section header {
+    font-size: 16px;
+    color: white;
+    position: relative;
+    padding: 6px 4px;
+    text-shadow: 1px 1px 2px black;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+section header small {
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    margin-left: 4px;
+    text-shadow: none;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+}

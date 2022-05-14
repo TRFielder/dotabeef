@@ -33,6 +33,28 @@ function MostPlayedHeroes() {
     return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
   }
 
+  /* const calculateKdaWithHero = (heroID) => {
+    const initialValue = 0
+
+    opendota.getMatchesAsHero(ID, heroID).then((gamesAsHero) => {
+      const kills = gamesAsHero.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.kills,
+        initialValue,
+      )
+
+      const deaths = gamesAsHero.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.deaths,
+        initialValue,
+      )
+
+      const assists = gamesAsHero.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.assists,
+        initialValue,
+      )
+      return Math.round(((kills + assists) / deaths) * 100) / 100
+    })
+  } */
+
   return (
     <div className="most-played-heroes">
       <section>
@@ -40,12 +62,20 @@ function MostPlayedHeroes() {
           Most Played Heroes <small>All Time</small>
         </header>
         <article>
-          <div className="r-table heroes-overview">
-            {MostPlayed.length && Heroes.length
-              ? MostPlayed.slice(0, 10).map((hero) => (
-                  <div className="r-row" key={hero.hero_id}>
-                    <div className="r-body">
-                      <div className="image-container image-container-hero image-container-icon">
+          <table className="r-table heroes-overview">
+            <tbody>
+              <tr>
+                <th>Hero</th>
+                <th>Matches</th>
+                <th>Win %</th>
+                <th>KDA</th>
+                <th>Role</th>
+                <th>Lane</th>
+              </tr>
+              {MostPlayed.length && Heroes.length
+                ? MostPlayed.slice(0, 10).map((hero) => (
+                    <tr className="r-row" key={hero.hero_id}>
+                      <td className="image-container image-container-hero image-container-icon">
                         <img
                           src={`http://cdn.dota2.com/apps/dota2/images/heroes/${
                             getHeroByID(hero.hero_id).name.split(
@@ -58,18 +88,19 @@ function MostPlayedHeroes() {
                           <p>{getHeroByID(hero.hero_id).localized_name}</p>
                           <p>{timeSinceLastMatch(hero.last_played)}</p>
                         </div>
-                      </div>
-                      <div className="gamesPlayedAsHero">{hero.games}</div>
-                      <div className="winrateAsHero">
+                      </td>
+                      <td className="gamesPlayedAsHero">{hero.games}</td>
+                      <td className="winrateAsHero">
                         {`${
                           Math.round((hero.win / hero.games) * 100 * 100) / 100
                         }%`}
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : 'Still loading'}
-          </div>
+                      </td>
+                      <td className="KdaAsHero">X.Y</td>
+                    </tr>
+                  ))
+                : 'Still loading'}
+            </tbody>
+          </table>
         </article>
       </section>
     </div>
