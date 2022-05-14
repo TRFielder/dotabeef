@@ -10,8 +10,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="players/:ID" element={<PlayerProfile />} />
-        <Route path="search/:Name" element={<Search />} />
+        <Route path="/players/:ID" element={<PlayerProfile />} />
+        <Route path="/search/:Name" element={<Search />} />
       </Routes>
     </HashRouter>
   )

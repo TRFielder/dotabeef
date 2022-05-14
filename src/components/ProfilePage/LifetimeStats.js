@@ -1,8 +1,6 @@
-// render 3 tables and matches/win% for each: Lane role, game mode, Faction
-
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getPlayerCounts } from '../helpers/opendota'
+import { getPlayerCounts } from '../../helpers/opendota'
 
 function LifetimeStats() {
   const { ID } = useParams()
@@ -10,7 +8,9 @@ function LifetimeStats() {
   const [Counts, setCounts] = useState([])
 
   useEffect(() => {
-    getPlayerCounts(ID).then((result) => setCounts(result))
+    getPlayerCounts(ID).then((result) => {
+      setCounts(result)
+    })
   }, [ID])
 
   return (
@@ -20,7 +20,7 @@ function LifetimeStats() {
           Statistics <small>All Time</small>
         </header>
         <article>
-          {Counts ? (
+          {Counts.length !== 0 ? (
             <table className="r-table lifetime-stats">
               <tbody>
                 <tr>
@@ -206,7 +206,7 @@ function LifetimeStats() {
                 </tr>
                 <tr>
                   <td>Radiant</td>
-                  <td>{Counts.is_radiant[1].games}</td>
+                  <td>{Counts.is_radiant[0].games}</td>
                   <td>
                     {`${
                       Math.round(

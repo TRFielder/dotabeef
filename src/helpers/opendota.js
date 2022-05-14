@@ -30,6 +30,14 @@ const getRecentMatches = async (accountID) => {
   return searchResult
 }
 
+const getFriends = async (accountID, dayLimit) => {
+  const response = await fetch(
+    `https://api.opendota.com/api/players/${accountID}/peers?limit=${dayLimit}`,
+  )
+  const data = await response.json()
+  return data
+}
+
 const getPlayerWinLoss = async (accountID) => {
   const response = await fetch(
     `https://api.opendota.com/api/players/${accountID}/wl`,
@@ -72,6 +80,7 @@ export {
   getPlayersByName,
   getPlayerData,
   getRecentMatches,
+  getFriends,
   getPlayerWinLoss,
   getPlayerCounts,
   getMostPlayedHeroes,

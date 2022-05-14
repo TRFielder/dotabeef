@@ -8,7 +8,7 @@
     vertical-align: baseline;
 }
 
-div, h1, small, dl, dd, dt, span tr td th {
+div, h1, small, dl, dd, dt, span {
     background: inherit;
 }
 
@@ -33,7 +33,7 @@ section header {
 
 section header small {
     color: rgba(255,255,255,0.6);
-    font-size: 16px;
+    font-size: 12px;
     margin-left: 4px;
     text-shadow: none;
 }
@@ -43,3 +43,4 @@ td {
     vertical-align: middle;
     padding: 4px;
 }
+
