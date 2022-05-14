@@ -1,3 +1,30 @@
 .r-table.heroes-overview {
     padding-top: 25px;
 }
+
+.r-row {
+    background-color: rgba(255,255,255,0.1);
+    padding: 5px 4px;
+}
+
+.r-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-container.image-container-hero {
+    display: flex;
+}
+
+.subtext.minor {
+    background-color: transparent;
+}
+
+.subtext.minor p {
+    font-size: 11px !important;
+    font-weight: 200;
+    color: rgba(255,255,255,0.6);
+    padding-top: 2px;
+    min-height: 14px;
+    background-color: transparent;
+}
