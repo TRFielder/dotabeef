@@ -33,28 +33,6 @@ function MostPlayedHeroes() {
     return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
   }
 
-  /* const calculateKdaWithHero = (heroID) => {
-    const initialValue = 0
-
-    opendota.getMatchesAsHero(ID, heroID).then((gamesAsHero) => {
-      const kills = gamesAsHero.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.kills,
-        initialValue,
-      )
-
-      const deaths = gamesAsHero.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.deaths,
-        initialValue,
-      )
-
-      const assists = gamesAsHero.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.assists,
-        initialValue,
-      )
-      return Math.round(((kills + assists) / deaths) * 100) / 100
-    })
-  } */
-
   return (
     <div className="most-played-heroes">
       <section>
@@ -67,10 +45,8 @@ function MostPlayedHeroes() {
               <tr>
                 <th>Hero</th>
                 <th>Matches</th>
+                <th>Wins</th>
                 <th>Win %</th>
-                <th>KDA</th>
-                <th>Role</th>
-                <th>Lane</th>
               </tr>
               {MostPlayed.length && Heroes.length
                 ? MostPlayed.slice(0, 10).map((hero) => (
@@ -90,12 +66,13 @@ function MostPlayedHeroes() {
                         </div>
                       </td>
                       <td className="gamesPlayedAsHero">{hero.games}</td>
+                      <td className="winsAsHero">{hero.win}</td>
                       <td className="winrateAsHero">
+                        {' '}
                         {`${
                           Math.round((hero.win / hero.games) * 100 * 100) / 100
                         }%`}
                       </td>
-                      <td className="KdaAsHero">X.Y</td>
                     </tr>
                   ))
                 : 'Still loading'}

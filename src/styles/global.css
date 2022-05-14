@@ -8,31 +8,7 @@
     vertical-align: baseline;
 }
 
-div {
-    background: inherit;
-}
-
-h1 {
-    background: inherit;
-}
-
-small {
-    background: inherit;
-}
-
-dl {
-    background: inherit;
-}
-
-dd {
-    background: inherit;
-}
-
-dt {
-    background: inherit;
-}
-
-span {
+div, h1, small, dl, dd, dt, span tr td th {
     background: inherit;
 }
 
@@ -65,4 +41,5 @@ section header small {
 td {
     text-align: center;
     vertical-align: middle;
+    padding: 4px;
 }
