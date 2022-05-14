@@ -4,32 +4,28 @@ import * as opendota from '../../helpers/opendota'
 import '../../styles/MostPlayedHeroes.css'
 
 function MostPlayedHeroes() {
-  const [Heroes, SetHeroes] = useState([])
+  const [Heroes, setHeroes] = useState([])
   const [MostPlayed, setMostPlayed] = useState([])
-  const [MostPlayedTable, setMostPlayedTable] = useState([])
+  // const [Table, setTable] = useState(['bane'])
   const { ID } = useParams()
 
   useEffect(() => {
-    opendota.getHeroes().then((result) => {
-      SetHeroes(result)
-    })
-  }, [])
-
-  useEffect(() => {
-    opendota.getMostPlayedHeroes(ID).then((result) => {
-      setMostPlayed(result)
-    })
+    opendota
+      .getHeroes()
+      .then((result) => {
+        setHeroes(result)
+      })
+      .then(() => {
+        opendota.getMostPlayedHeroes(ID).then((result) => {
+          setMostPlayed(result)
+        })
+      })
   }, [ID])
 
-  useEffect(() => {
-    MostPlayed.forEach((hero) => {
-      setMostPlayedTable([...MostPlayedTable, getHeroByID(hero.hero_id)])
-    })
-  }, [MostPlayed])
-
-  const getHeroByID = () => {
-    const result = Heroes[2]
-    return result
+  const getHeroByID = (heroID) => {
+    console.log(heroID)
+    console.log(Heroes.find((hero) => hero.id === 1))
+    console.log(Heroes.find((hero) => hero.id === `${heroID}`))
   }
 
   return (
@@ -40,19 +36,17 @@ function MostPlayedHeroes() {
         </header>
         <article>
           <div className="r-table r-only-mobile-5 heroes-overview">
-            {
-              /* MostPlayedTable.length !== 0
+            {MostPlayed.length && Heroes.length
               ? MostPlayed.map((hero) => (
                   <div className="r-row" key={hero.hero_id}>
                     <div className="r-body">
                       <div className="image-container image-container-hero image-container-icon">
-                        {`${getHeroByID(hero.hero_id).localized_name}`}
+                        {getHeroByID(hero.hero_id)}
                       </div>
                     </div>
                   </div>
                 ))
-              : */ 'Still loading'
-            }
+              : 'Still loading'}
           </div>
         </article>
       </section>
