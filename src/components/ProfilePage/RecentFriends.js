@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getFriends } from '../../helpers/opendota'
 import '../../styles/RecentFriends.css'
 
@@ -30,7 +30,9 @@ function RecentFriends() {
                 <tr>
                   <td className="friendInfo">
                     <img src={friend.avatar} alt={friend.account_id}></img>
-                    <p>{friend.personaname}</p>
+                    <Link to={`../../players/${friend.account_id}`}>
+                      {friend.personaname}
+                    </Link>
                   </td>
                   <td>{friend.with_games}</td>
                   <td>
