@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getRecentMatches } from '../../helpers/opendota'
-import { checkPlayerTeam } from '../../helpers/utilities'
+import * as utilities from '../../helpers/utilities'
 
 import '../../styles/RecentMatches.css'
 
@@ -47,8 +47,18 @@ function RecentMatches(props) {
               ) : (
                 Matches.slice(0, 15).map((match) => (
                   <tr>
-                    <td>{getHeroByID(match.hero_id).localized_name}</td>
-                    <td>{checkPlayerTeam(match.player_slot)}</td>
+                    <td className="green">
+                      {getHeroByID(match.hero_id).localized_name}
+                    </td>
+
+                    {utilities.checkPlayerWin(
+                      utilities.checkPlayerTeam(match.player_slot),
+                      match.radiant_win,
+                    ) ? (
+                      <td className="green">Victory</td>
+                    ) : (
+                      <td className="red">Defeat</td>
+                    )}
                   </tr>
                 ))
               )}

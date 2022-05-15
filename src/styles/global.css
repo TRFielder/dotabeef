@@ -46,3 +46,11 @@ td {
 tr {
     padding: 4px;
 }
+
+.red {
+    color: #C23C2A !important;
+}
+
+.green {
+    color: #A9CF54 !important;
+}

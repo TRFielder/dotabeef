@@ -21,4 +21,12 @@ describe('Testing utilities', () => {
     expect(utilities.getDuration(2238)).toEqual('37:18')
     expect(utilities.getDuration(1680)).toEqual('28:00')
   })
+
+  test('checkPlayerWin correctly returns match result', () => {
+    expect(utilities.checkPlayerWin('Radiant', true)).toBe(true)
+    expect(utilities.checkPlayerWin('Radiant', false)).toBe(false)
+    expect(utilities.checkPlayerWin('Dire', true)).toBe(false)
+    expect(utilities.checkPlayerWin('Dire', false)).toBe(true)
+    expect(utilities.checkPlayerWin('Unknown', true)).toEqual('Unknown result')
+  })
 })

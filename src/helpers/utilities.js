@@ -17,4 +17,12 @@ function getDuration(durationSeconds) {
   return `${minutes}:${seconds}`
 }
 
-export { checkPlayerTeam, getDuration }
+function checkPlayerWin(team, radiantwin) {
+  if (team === 'Radiant' && radiantwin === true) return true
+  if (team === 'Radiant' && radiantwin === false) return false
+  if (team === 'Dire' && radiantwin === true) return false
+  if (team === 'Dire' && radiantwin === false) return true
+  return 'Unknown result'
+}
+
+export { checkPlayerTeam, getDuration, checkPlayerWin }
