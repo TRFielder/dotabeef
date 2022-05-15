@@ -1,28 +1,22 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import * as opendota from '../../helpers/opendota'
 import '../../styles/MostPlayedHeroes.css'
 
-function MostPlayedHeroes() {
-  const [Heroes, setHeroes] = useState([])
+function MostPlayedHeroes(props) {
   const [MostPlayed, setMostPlayed] = useState([])
   const { ID } = useParams()
 
-  useEffect(() => {
-    opendota
-      .getHeroes()
-      .then((result) => {
-        setHeroes([...result])
-      })
-      .then(() => {
-        opendota.getMostPlayedHeroes(ID).then((result) => {
-          setMostPlayed([...result])
-        })
-      })
-  }, [ID])
+  MostPlayedHeroes.propTypes = {
+    Heroes: PropTypes.array,
+  }
 
-  const getHeroByID = (heroID) =>
-    Heroes.find((hero) => hero.id === parseInt(heroID, 10))
+  useEffect(() => {
+    opendota.getMostPlayedHeroes(ID).then((result) => {
+      setMostPlayed([...result])
+    })
+  }, [ID])
 
   const timeSinceLastMatch = (date) => {
     const lastMatchMs = date * 1000
@@ -32,6 +26,9 @@ function MostPlayedHeroes() {
     const hourDiff = Math.round((today - lastMatch) / (1000 * 3600))
     return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
   }
+
+  const getHeroByID = (heroID) =>
+    props.Heroes.find((hero) => hero.id === parseInt(heroID, 10))
 
   return (
     <div className="most-played-heroes">
@@ -48,7 +45,7 @@ function MostPlayedHeroes() {
                 <th>Wins</th>
                 <th>Win %</th>
               </tr>
-              {MostPlayed.length && Heroes.length
+              {MostPlayed.length && props.Heroes.length
                 ? MostPlayed.slice(0, 10).map((hero) => (
                     <tr className="r-row" key={hero.hero_id}>
                       <td className="image-container image-container-hero image-container-icon">
