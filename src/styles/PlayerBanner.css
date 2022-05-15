@@ -5,9 +5,11 @@
 }
 
 .player-details-content {
+    display: flex;
     background: #2E3740;
     position: relative;
     padding: 8px;
+    flex-wrap: wrap;
 }
 
 .player-details-primary {
@@ -15,6 +17,17 @@
     padding: 0;
     border: 0;
     background: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .player-details-secondary {
+        background: inherit;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        margin-top: 0;
+    }
 }
 
 .player-details-avatar{
@@ -39,13 +52,7 @@
     height: 65px;
 }
 
-.player-details-secondary {
-    background: inherit;
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    margin-top: 0;
-}
+
 
 .player-details-secondary > dl {
     display: inline-block;
@@ -58,12 +65,6 @@
     font-size: 12px;
     margin-top: 4px;
     text-transform: uppercase;
-}
-
-@media only screen and (max-width: 768px) {
-    .player-details-secondary > .player-details-counts {
-        display: none;
-    }
 }
 
 .player-details-interactive {

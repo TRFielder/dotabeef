@@ -10,6 +10,14 @@ root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Helmet>
+        <meta
+          property="og:title"
+          content="Dotabeef - A stats tool for dota 2"
+        />
+        <meta
+          property="og:image"
+          content="../public/opengraph-image-spirit-breaker.webp"
+        />
         <meta charset="utf-8" />
         <title>Dotabeef</title>
       </Helmet>
