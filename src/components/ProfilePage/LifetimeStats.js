@@ -139,61 +139,98 @@ function LifetimeStats() {
                   </tr>
                   <tr>
                     <td>Random Draft</td>
-                    <td>{Counts.game_mode[3].games}</td>
-                    <td>
-                      {`${
-                        Math.round(
-                          (Counts.game_mode[3].win /
-                            Counts.game_mode[3].games) *
-                            100 *
-                            100,
-                        ) / 100
-                      }%`}
-                    </td>
+                    {Counts.game_mode[3] === undefined ? (
+                      <>
+                        <td>0</td>
+                        <td>0%</td>
+                      </>
+                    ) : (
+                      <>
+                        <td>{Counts.game_mode[3].games}</td>
+                        <td>
+                          {`${
+                            Math.round(
+                              (Counts.game_mode[3].win /
+                                Counts.game_mode[3].games) *
+                                100 *
+                                100,
+                            ) / 100
+                          }%`}
+                        </td>
+                      </>
+                    )}
                   </tr>
+
                   <tr>
                     <td>Single Draft</td>
-                    <td>{Counts.game_mode[4].games}</td>
-                    <td>
-                      {`${
-                        Math.round(
-                          (Counts.game_mode[4].win /
-                            Counts.game_mode[4].games) *
-                            100 *
-                            100,
-                        ) / 100
-                      }%`}
-                    </td>
+                    {Counts.game_mode[4] === undefined ? (
+                      <>
+                        <td>0</td>
+                        <td>0%</td>
+                      </>
+                    ) : (
+                      <>
+                        <td>{Counts.game_mode[4].games}</td>
+                        <td>
+                          {`${
+                            Math.round(
+                              (Counts.game_mode[4].win /
+                                Counts.game_mode[4].games) *
+                                100 *
+                                100,
+                            ) / 100
+                          }%`}
+                        </td>
+                      </>
+                    )}
                   </tr>
 
                   <tr>
                     <td>All Random</td>
-                    <td>{Counts.game_mode[5].games}</td>
-                    <td>
-                      {`${
-                        Math.round(
-                          (Counts.game_mode[5].win /
-                            Counts.game_mode[5].games) *
-                            100 *
-                            100,
-                        ) / 100
-                      }%`}
-                    </td>
+                    {Counts.game_mode[5] === undefined ? (
+                      <>
+                        <td>0</td>
+                        <td>0%</td>
+                      </>
+                    ) : (
+                      <>
+                        <td>{Counts.game_mode[5].games}</td>
+                        <td>
+                          {`${
+                            Math.round(
+                              (Counts.game_mode[5].win /
+                                Counts.game_mode[5].games) *
+                                100 *
+                                100,
+                            ) / 100
+                          }%`}
+                        </td>
+                      </>
+                    )}
                   </tr>
 
                   <tr>
                     <td>All Draft</td>
-                    <td>{Counts.game_mode[22].games}</td>
-                    <td>
-                      {`${
-                        Math.round(
-                          (Counts.game_mode[22].win /
-                            Counts.game_mode[22].games) *
-                            100 *
-                            100,
-                        ) / 100
-                      }%`}
-                    </td>
+                    {Counts.game_mode[22] === undefined ? (
+                      <>
+                        <td>0</td>
+                        <td>0%</td>
+                      </>
+                    ) : (
+                      <>
+                        <td>{Counts.game_mode[22].games}</td>
+                        <td>
+                          {`${
+                            Math.round(
+                              (Counts.game_mode[22].win /
+                                Counts.game_mode[22].games) *
+                                100 *
+                                100,
+                            ) / 100
+                          }%`}
+                        </td>
+                      </>
+                    )}
                   </tr>
                 </tbody>
               </table>

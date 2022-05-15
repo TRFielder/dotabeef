@@ -39,7 +39,9 @@ function PlayerBanner() {
   }
 
   const getAbandons = () =>
-    Counts.leaver_status[2].games + Counts.leaver_status[3].games
+    Object.entries(Counts.leaver_status)
+      .slice(1)
+      .reduce((prev, curr) => prev + curr[1].games, 0)
 
   return (
     <div className="PlayerDetails">
