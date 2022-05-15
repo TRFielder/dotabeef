@@ -58,7 +58,9 @@ function MostPlayedHeroes(props) {
                           alt={getHeroByID(hero.hero_id).localized_name}
                         ></img>
                         <div className="subtext minor">
-                          <p>{getHeroByID(hero.hero_id).localized_name}</p>
+                          <p className="green">
+                            {getHeroByID(hero.hero_id).localized_name}
+                          </p>
                           <p>{timeSinceLastMatch(hero.last_played)}</p>
                         </div>
                       </td>
