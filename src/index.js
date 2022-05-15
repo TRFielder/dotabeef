@@ -18,6 +18,7 @@ root.render(
           property="og:image"
           content="../public/opengraph-image-spirit-breaker.webp"
         />
+        <meta name="description" content="Dota stats tool" />
         <meta charset="utf-8" />
         <title>Dotabeef</title>
       </Helmet>
