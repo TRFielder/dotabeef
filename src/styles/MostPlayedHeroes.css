@@ -1,10 +1,7 @@
-.most-played-heroes {
-    width: 600px;
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
+    /* For desktop */
     .most-played-heroes {
-        max-width: 600px;
+        width: 600px;
     }
 }
 
