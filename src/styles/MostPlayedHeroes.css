@@ -21,10 +21,16 @@
 
 .image-container.image-container-hero {
     display: flex;
+
+}
+
+.image-container-hero > img {
+    margin: auto 15px;
 }
 
 .subtext.minor {
     background-color: transparent;
+    margin: auto;
 }
 
 .subtext.minor p {

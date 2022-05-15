@@ -4,3 +4,7 @@
         width: 600px;
     }
 }
+
+.RecentMatches > section, .RecentMatches > section > article > table {
+    width: 100%;
+}

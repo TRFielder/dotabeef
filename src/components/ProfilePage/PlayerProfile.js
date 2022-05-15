@@ -17,7 +17,7 @@ function PlayerProfile() {
     getHeroes().then((result) => {
       setHeroes([...result])
     })
-  })
+  }, [])
 
   return (
     <>
