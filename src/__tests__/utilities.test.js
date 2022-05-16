@@ -29,4 +29,15 @@ describe('Testing utilities', () => {
     expect(utilities.checkPlayerWin('Dire', false)).toBe(true)
     expect(utilities.checkPlayerWin('Unknown', true)).toEqual('Unknown result')
   })
+
+  test('dateToReadableFormat correctly converts valid dates', () => {
+    expect(utilities.dateToReadableFormat('2018-08-27T17:35:12.000Z')).toEqual(
+      '27/8/2018',
+    )
+    expect(utilities.dateToReadableFormat('27 November 2019')).toEqual(
+      '27/11/2019',
+    )
+    expect(utilities.dateToReadableFormat(undefined)).toEqual('not found')
+    expect(utilities.dateToReadableFormat('Cheese')).toEqual('invalid')
+  })
 })

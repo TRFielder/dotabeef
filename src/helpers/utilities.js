@@ -28,6 +28,7 @@ function checkPlayerWin(team, radiantwin) {
 function dateToReadableFormat(date) {
   if (date === undefined) return 'not found'
   const timeUnix = Date.parse(date)
+  if (Number.isNaN(timeUnix)) return 'invalid'
   const dateObj = new Date(timeUnix)
   return `${dateObj.getDate()}/${
     dateObj.getMonth() + 1
