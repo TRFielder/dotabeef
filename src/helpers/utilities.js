@@ -25,4 +25,13 @@ function checkPlayerWin(team, radiantwin) {
   return 'Unknown result'
 }
 
-export { checkPlayerTeam, getDuration, checkPlayerWin }
+function dateToReadableFormat(date) {
+  if (date === undefined) return 'No games'
+  const timeUnix = Date.parse(date)
+  const dateObj = new Date(timeUnix)
+  return `${dateObj.getDate()}/${
+    dateObj.getMonth() + 1
+  }/${dateObj.getFullYear()}`
+}
+
+export { checkPlayerTeam, getDuration, checkPlayerWin, dateToReadableFormat }

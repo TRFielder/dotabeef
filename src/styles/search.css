@@ -1,3 +1,27 @@
 .image-player.image-player-avatar {
     max-width: 60px;
 }
+
+.playerSearchResults > article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.playerSearchResults > article > a {
+    text-decoration: none;
+}
+
+.player-result {
+    display: flex;
+    width: 250px;
+    margin: 5px;
+}
+
+.avatar.image-container.image-container-player {
+    margin: auto;
+}
+
+.player-result-details {
+    margin: auto;
+}
