@@ -35,6 +35,7 @@ function Search() {
                 <div className="player-result-details">
                   <p className="green">{player.personaname}</p>
                   <p>
+                    Last match{' '}
                     {utilities.dateToReadableFormat(player.last_match_time)}
                   </p>
                 </div>

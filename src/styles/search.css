@@ -18,10 +18,11 @@
     margin: 5px;
 }
 
-.avatar.image-container.image-container-player {
+.avatar.image-container.image-container-player, .player-result-details {
     margin: auto;
 }
 
-.player-result-details {
-    margin: auto;
+.player-result-details > p:nth-of-type(2) {
+    color: #C4C4C4;
+    font-size: 12px
 }
