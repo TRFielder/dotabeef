@@ -8,3 +8,7 @@
 .RecentMatches > section, .RecentMatches > section > article > table {
     width: 100%;
 }
+
+.match-overview-hero {
+    margin-left: 5px !important;
+}

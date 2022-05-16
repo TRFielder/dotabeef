@@ -257,7 +257,7 @@ function LifetimeStats() {
                   </tr>
                   <tr>
                     <td>Radiant</td>
-                    <td>{Counts.is_radiant[0].games}</td>
+                    <td>{Counts.is_radiant[1].games}</td>
                     <td>
                       {`${
                         Math.round(

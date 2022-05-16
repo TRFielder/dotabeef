@@ -32,7 +32,7 @@ function RecentMatches(props) {
               <tr>
                 <th>Hero</th>
                 <th>Result</th>
-                <th>Type</th>
+                <th>MatchID</th>
                 <th>Duration</th>
                 <th>KDA</th>
               </tr>
@@ -47,8 +47,20 @@ function RecentMatches(props) {
               ) : (
                 Matches.slice(0, 15).map((match) => (
                   <tr>
-                    <td className="green">
-                      {getHeroByID(match.hero_id).localized_name}
+                    <td className="image-container image-container-hero image-container-icon">
+                      <img
+                        src={`http://cdn.dota2.com/apps/dota2/images/heroes/${
+                          getHeroByID(match.hero_id).name.split(
+                            'npc_dota_hero_',
+                          )[1]
+                        }_sb.png`}
+                        alt={getHeroByID(match.hero_id).localized_name}
+                      ></img>
+                      <div className="subtext minor match-overview-hero">
+                        <p className="green">
+                          {getHeroByID(match.hero_id).localized_name}
+                        </p>
+                      </div>
                     </td>
 
                     {utilities.checkPlayerWin(
@@ -59,6 +71,11 @@ function RecentMatches(props) {
                     ) : (
                       <td className="red">Defeat</td>
                     )}
+                    <td>{match.match_id}</td>
+                    <td>{utilities.getDuration(match.duration)}</td>
+                    <td>
+                      {match.kills}/{match.deaths}/{match.assists}
+                    </td>
                   </tr>
                 ))
               )}
