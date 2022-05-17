@@ -49,8 +49,10 @@ tr {
 
 .red {
     color: #C23C2A !important;
+    text-decoration: none;
 }
 
 .green {
     color: #A9CF54 !important;
+    text-decoration: none;
 }

@@ -4,10 +4,10 @@
 }
 
 .friendInfo > a, .friendInfo > img {
-    margin: auto;
+    margin-left: 5px !important;
 }
 
-td > a {
+.friendInfo > a {
     text-decoration: none;
     color: #A9CF54
 }

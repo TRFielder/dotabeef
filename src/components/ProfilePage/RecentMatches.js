@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getRecentMatches } from '../../helpers/opendota'
 import * as utilities from '../../helpers/utilities'
 
@@ -32,7 +32,6 @@ function RecentMatches(props) {
               <tr>
                 <th>Hero</th>
                 <th>Result</th>
-                <th>MatchID</th>
                 <th>Duration</th>
                 <th>KDA</th>
               </tr>
@@ -41,7 +40,6 @@ function RecentMatches(props) {
                   <td>Still</td>
                   <td>Waiting</td>
                   <td>For</td>
-                  <td>Match</td>
                   <td>Data</td>
                 </tr>
               ) : (
@@ -56,22 +54,37 @@ function RecentMatches(props) {
                         }_sb.png`}
                         alt={getHeroByID(match.hero_id).localized_name}
                       ></img>
-                      <div className="subtext minor match-overview-hero">
-                        <p className="green">
-                          {getHeroByID(match.hero_id).localized_name}
-                        </p>
-                      </div>
+                      <Link
+                        to={`../../matches/${match.match_id}`}
+                        className="green subtext minor match-overview-hero"
+                      >
+                        {getHeroByID(match.hero_id).localized_name}
+                      </Link>
                     </td>
 
                     {utilities.checkPlayerWin(
                       utilities.checkPlayerTeam(match.player_slot),
                       match.radiant_win,
                     ) ? (
-                      <td className="green">Victory</td>
+                      <td>
+                        <Link
+                          to={`../../matches/${match.match_id}`}
+                          className="green"
+                        >
+                          Victory
+                        </Link>
+                      </td>
                     ) : (
-                      <td className="red">Defeat</td>
+                      <td>
+                        {' '}
+                        <Link
+                          to={`../../matches/${match.match_id}`}
+                          className="red"
+                        >
+                          Defeat
+                        </Link>
+                      </td>
                     )}
-                    <td>{match.match_id}</td>
                     <td>{utilities.getDuration(match.duration)}</td>
                     <td>
                       {match.kills}/{match.deaths}/{match.assists}
