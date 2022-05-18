@@ -63,7 +63,7 @@ function RecentMatches(props) {
                     </td>
 
                     {utilities.checkPlayerWin(
-                      utilities.checkPlayerTeam(match.player_slot),
+                      utilities.getPlayerSlot(match.player_slot).playerTeam,
                       match.radiant_win,
                     ) ? (
                       <td>
