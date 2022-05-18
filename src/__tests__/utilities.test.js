@@ -101,4 +101,9 @@ describe('Testing match information parsing', () => {
       topM: true,
     })
   })
+
+  test('Correctly returns game mode', () => {
+    expect(utilities.getGameMode(1)).toEqual('All Pick')
+    expect(utilities.getGameMode(22)).toEqual('All Pick')
+  })
 })

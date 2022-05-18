@@ -26,6 +26,13 @@ function dateToReadableFormat(date) {
   }/${dateObj.getFullYear()}`
 }
 
+function dateFromUnixTime(date) {
+  const dateObj = new Date(date * 1000)
+  return `${dateObj.getDate()}/${
+    dateObj.getMonth() + 1
+  }/${dateObj.getFullYear()}`
+}
+
 function to8BitUnsigned(number) {
   return number.toString(2).padStart(8, '0')
 }
@@ -82,13 +89,64 @@ function getBarracksStatus(number) {
   return barracksStatus
 }
 
+function getGameMode(mode) {
+  switch (mode) {
+    case 1:
+      return 'All Pick'
+    case 2:
+      return "Captain's Mode"
+    case 3:
+      return 'Random Draft'
+    case 4:
+      return 'Single Draft'
+    case 5:
+      return 'All Random'
+    case 6:
+      return 'Intro'
+    case 7:
+      return 'Diretide'
+    case 8:
+      return "Reverse Captain's mode"
+    case 9:
+      return 'The Greevilling'
+    case 10:
+      return 'Tutorial'
+    case 11:
+      return 'Mid Only'
+    case 12:
+      return 'Least Played'
+    case 13:
+      return 'New Player'
+    case 14:
+      return 'Compendium'
+    case 15:
+      return 'Co-op vs Bots'
+    case 16:
+      return 'Captains Draft'
+    case 18:
+      return 'Ability Draft'
+    case 20:
+      return 'All Random Deathmatch'
+    case 21:
+      return '1v1 Mid Only'
+    case 22:
+      return 'All Pick'
+    case 23:
+      return 'Turbo'
+    default:
+      return 'Unknown'
+  }
+}
+
 export {
   getDuration,
   checkPlayerWin,
   dateToReadableFormat,
+  dateFromUnixTime,
   to8BitUnsigned,
   to16BitUnsigned,
   getPlayerSlot,
   getTowerStatus,
   getBarracksStatus,
+  getGameMode,
 }

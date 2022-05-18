@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import '../../styles/MatchBanner.css'
+import * as utilities from '../../helpers/utilities'
 
 function MatchBanner(props) {
   MatchBanner.propTypes = {
@@ -14,24 +15,21 @@ function MatchBanner(props) {
         <div className="MatchDetails-content-primary">
           <div className="MatchDetails-content-title">
             <h1>{`Match ${props.matchData.match_id}`}</h1>
+            <small>Overview</small>
           </div>
         </div>
         <div className="MatchDetails-content-secondary">
           <dl>
-            <dd>Normal skill</dd>
-            <dt>Skill Bracket</dt>
-          </dl>
-          <dl>
-            <dd>All Pick</dd>
+            <dd>{utilities.getGameMode(props.matchData.game_mode)}</dd>
             <dt>Game Mode</dt>
           </dl>
           <dl>
-            <dd>Europe</dd>
-            <dt>Region</dt>
+            <dd>{utilities.getDuration(props.matchData.duration)}</dd>
+            <dt>Duration</dt>
           </dl>
           <dl>
-            <dd>26:13</dd>
-            <dt>Duration</dt>
+            <dd>{utilities.dateFromUnixTime(props.matchData.start_time)}</dd>
+            <dt>Match Ended</dt>
           </dl>
         </div>
       </div>

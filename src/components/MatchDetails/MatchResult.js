@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import * as opendota from '../../helpers/opendota'
 import MatchBanner from './MatchBanner'
+import MatchScoreboard from './MatchScoreboard'
 
 function MatchResult() {
   const [matchData, setMatchData] = useState(null)
@@ -18,7 +19,12 @@ function MatchResult() {
       {matchData === null ? (
         <p>Still loading match data!</p>
       ) : (
-        <MatchBanner matchData={matchData} />
+        <>
+          <MatchBanner matchData={matchData} />
+          <div className="match-results-full">
+            <MatchScoreboard matchData={matchData} />
+          </div>
+        </>
       )}
     </div>
   )

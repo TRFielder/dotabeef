@@ -1,0 +1,7 @@
+.MatchScoreboard-result {
+    font-weight: 800 !important;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 15px;
+}

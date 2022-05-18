@@ -37,6 +37,15 @@
 }
 
 .MatchDetails-content-secondary {
+    gap: 20px;
     display: flex;
     justify-content: flex-end;
+    margin-right: 5px;
+}
+
+.MatchDetails-content-secondary > dl > dt {
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    margin-top: 4px;
+    text-transform: uppercase;
 }
