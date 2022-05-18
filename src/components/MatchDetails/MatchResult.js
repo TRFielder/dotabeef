@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import * as opendota from '../../helpers/opendota'
 import MatchBanner from './MatchBanner'
 import MatchScoreboard from './MatchScoreboard'
+import TeamScore from './TeamScore'
 
 function MatchResult() {
   const [matchData, setMatchData] = useState(null)
@@ -23,6 +24,7 @@ function MatchResult() {
           <MatchBanner matchData={matchData} />
           <div className="match-results-full">
             <MatchScoreboard matchData={matchData} />
+            <TeamScore matchData={matchData} team="The Radiant" />
           </div>
         </>
       )}
