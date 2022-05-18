@@ -47,6 +47,41 @@ function getPlayerSlot(number) {
   return { playerTeam, playerSlot }
 }
 
+function getTowerStatus(number) {
+  // Blank | Blank | Blank | Blank | Blank | T4 bot | T4 top | T3 bot | T2 bot | T1 bot | T3 mid | T2 mid | T1 mid | T3 top | T2 top | T1 top
+  const towerStatusArray = Array.from(number)
+  const towerStatus = {
+    t4bot: towerStatusArray[5] === '1',
+    t4top: towerStatusArray[6] === '1',
+    t3bot: towerStatusArray[7] === '1',
+    t2bot: towerStatusArray[8] === '1',
+    t1bot: towerStatusArray[9] === '1',
+    t3mid: towerStatusArray[10] === '1',
+    t2mid: towerStatusArray[11] === '1',
+    t1mid: towerStatusArray[12] === '1',
+    t3top: towerStatusArray[13] === '1',
+    t2top: towerStatusArray[14] === '1',
+    t1top: towerStatusArray[15] === '1',
+  }
+
+  return towerStatus
+}
+
+function getBarracksStatus(number) {
+  // Blank | Blank | Bot R | Bot M | Mid R | Mid M | Top R | Top M
+  const barracksStatusArray = Array.from(number)
+  const barracksStatus = {
+    botR: barracksStatusArray[2] === '1',
+    botM: barracksStatusArray[3] === '1',
+    midR: barracksStatusArray[4] === '1',
+    midM: barracksStatusArray[5] === '1',
+    topR: barracksStatusArray[6] === '1',
+    topM: barracksStatusArray[6] === '1',
+  }
+
+  return barracksStatus
+}
+
 export {
   getDuration,
   checkPlayerWin,
@@ -54,4 +89,6 @@ export {
   to8BitUnsigned,
   to16BitUnsigned,
   getPlayerSlot,
+  getTowerStatus,
+  getBarracksStatus,
 }

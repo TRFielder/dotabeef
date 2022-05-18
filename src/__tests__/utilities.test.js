@@ -51,4 +51,54 @@ describe('Testing match information parsing', () => {
       playerSlot: 2,
     })
   })
+
+  test('Correctly parses tower status array', () => {
+    expect(utilities.getTowerStatus(utilities.to16BitUnsigned(2046))).toEqual({
+      t4bot: true,
+      t4top: true,
+      t3bot: true,
+      t2bot: true,
+      t1bot: true,
+      t3mid: true,
+      t2mid: true,
+      t1mid: true,
+      t3top: true,
+      t2top: true,
+      t1top: false,
+    })
+
+    expect(utilities.getTowerStatus(utilities.to16BitUnsigned(390))).toEqual({
+      t4bot: false,
+      t4top: false,
+      t3bot: true,
+      t2bot: true,
+      t1bot: false,
+      t3mid: false,
+      t2mid: false,
+      t1mid: false,
+      t3top: true,
+      t2top: true,
+      t1top: false,
+    })
+  })
+
+  test('Correctly parses barracks status array', () => {
+    expect(utilities.getBarracksStatus(utilities.to8BitUnsigned(63))).toEqual({
+      botR: true,
+      botM: true,
+      midR: true,
+      midM: true,
+      topR: true,
+      topM: true,
+    })
+
+    expect(utilities.getBarracksStatus(utilities.to8BitUnsigned(51))).toEqual({
+      botR: true,
+      botM: true,
+      midR: false,
+      midM: false,
+      topR: true,
+      topM: true,
+    })
+  })
 })
