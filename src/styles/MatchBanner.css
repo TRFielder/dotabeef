@@ -1,0 +1,42 @@
+.MatchDetails {
+    box-shadow: 0 0 3px rgb(10 10 10 / 40%);
+    border-radius: 1px;
+    margin: 13px 0 0 0;
+}
+
+.MatchDetails-content {
+    display: flex;
+    background: #2E3740;
+    padding: 8px;
+    flex-wrap: wrap;
+}
+
+.MatchDetails-content-primary {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .MatchDetails-secondary {
+        top: 8px;
+        right: 8px;
+        margin-top: 0;
+    }
+}
+
+.MatchDetails-content-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.MatchDetails-content-title > h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.MatchDetails-content-secondary {
+    display: flex;
+    justify-content: flex-end;
+}

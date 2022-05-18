@@ -44,7 +44,7 @@ function RecentMatches(props) {
                 </tr>
               ) : (
                 Matches.slice(0, 15).map((match) => (
-                  <tr>
+                  <tr key={match.match_id}>
                     <td className="image-container image-container-hero image-container-icon">
                       <img
                         src={`http://cdn.dota2.com/apps/dota2/images/heroes/${
