@@ -40,4 +40,29 @@ describe('Testing utilities', () => {
     expect(utilities.dateToReadableFormat(undefined)).toEqual('not found')
     expect(utilities.dateToReadableFormat('Cheese')).toEqual('invalid')
   })
+
+  test('Converts numbers to 8 bit unsigned integers', () => {
+    expect(utilities.to8BitUnsigned(63)).toEqual('00111111')
+    expect(utilities.to8BitUnsigned(51)).toEqual('00110011')
+    expect(utilities.to8BitUnsigned(1)).toEqual('00000001')
+  })
+
+  test('Converts numbers to 16 bit unsigned integers', () => {
+    expect(utilities.to16BitUnsigned(2046)).toEqual('0000011111111110')
+    expect(utilities.to16BitUnsigned(390)).toEqual('0000000110000110')
+  })
+})
+
+describe('Testing match information parsing', () => {
+  test('Correctly parses player slot and team information', () => {
+    expect(utilities.getPlayerSlot(utilities.to8BitUnsigned(3))).toEqual({
+      playerTeam: 'Radiant',
+      playerSlot: 3,
+    })
+
+    expect(utilities.getPlayerSlot(utilities.to8BitUnsigned(130))).toEqual({
+      playerTeam: 'Dire',
+      playerSlot: 2,
+    })
+  })
 })

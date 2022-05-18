@@ -35,4 +35,33 @@ function dateToReadableFormat(date) {
   }/${dateObj.getFullYear()}`
 }
 
-export { checkPlayerTeam, getDuration, checkPlayerWin, dateToReadableFormat }
+function to8BitUnsigned(number) {
+  return number.toString(2).padStart(8, '0')
+}
+
+function to16BitUnsigned(number) {
+  return number.toString(2).padStart(16, '0')
+}
+
+function getPlayerSlot(number) {
+  // Team | Blank | Blank | Blank | Blank | Position | within | team (0-4)
+  // Team false if radiant, true if dire
+  const playerSlotArray = Array.from(number)
+  const playerTeam = playerSlotArray[0] === '0' ? 'Radiant' : 'Dire'
+  const playerSlot = parseInt(
+    [playerSlotArray[5], playerSlotArray[6], playerSlotArray[7]].join(''),
+    2,
+  )
+
+  return { playerTeam, playerSlot }
+}
+
+export {
+  checkPlayerTeam,
+  getDuration,
+  checkPlayerWin,
+  dateToReadableFormat,
+  to8BitUnsigned,
+  to16BitUnsigned,
+  getPlayerSlot,
+}
