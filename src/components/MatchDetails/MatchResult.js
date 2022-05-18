@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import * as opendota from '../../helpers/opendota'
 import MatchBanner from './MatchBanner'
 import MatchScoreboard from './MatchScoreboard'
 import TeamScore from './TeamScore'
 
-function MatchResult() {
+function MatchResult(props) {
+  MatchResult.propTypes = {
+    Heroes: PropTypes.array,
+  }
   const [matchData, setMatchData] = useState(null)
   const { MatchID } = useParams()
 
@@ -24,7 +28,18 @@ function MatchResult() {
           <MatchBanner matchData={matchData} />
           <div className="match-results-full">
             <MatchScoreboard matchData={matchData} />
-            <TeamScore matchData={matchData} team="The Radiant" />
+            <TeamScore
+              key="radiant"
+              matchData={matchData}
+              team="The Radiant"
+              Heroes={props.Heroes}
+            />
+            <TeamScore
+              key="dire"
+              matchData={matchData}
+              team="The Dire"
+              Heroes={props.Heroes}
+            />
           </div>
         </>
       )}

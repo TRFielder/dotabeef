@@ -8,7 +8,6 @@ import '../../styles/RecentMatches.css'
 
 function RecentMatches(props) {
   RecentMatches.propTypes = {
-    // eslint-disable-next-line react/no-unused-prop-types
     Heroes: PropTypes.array,
   }
 
