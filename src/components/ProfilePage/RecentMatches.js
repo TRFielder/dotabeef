@@ -46,12 +46,13 @@ function RecentMatches(props) {
                   <tr key={match.match_id}>
                     <td className="image-container image-container-hero image-container-icon">
                       <img
-                        src={`http://cdn.dota2.com/apps/dota2/images/heroes/${
+                        src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
                           getHeroByID(match.hero_id).name.split(
                             'npc_dota_hero_',
                           )[1]
-                        }_sb.png`}
+                        }.png?`}
                         alt={getHeroByID(match.hero_id).localized_name}
+                        className="scoreboard-size"
                       ></img>
                       <Link
                         to={`../../matches/${match.match_id}`}

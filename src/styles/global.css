@@ -56,3 +56,7 @@ tr {
     color: #A9CF54 !important;
     text-decoration: none;
 }
+
+.scoreboard-size {
+    max-height: 36px;
+}

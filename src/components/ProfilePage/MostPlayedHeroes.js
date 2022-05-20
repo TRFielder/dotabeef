@@ -50,12 +50,13 @@ function MostPlayedHeroes(props) {
                     <tr className="r-row" key={hero.hero_id}>
                       <td className="image-container image-container-hero image-container-icon">
                         <img
-                          src={`http://cdn.dota2.com/apps/dota2/images/heroes/${
+                          src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
                             getHeroByID(hero.hero_id).name.split(
                               'npc_dota_hero_',
                             )[1]
-                          }_sb.png`}
+                          }.png?`}
                           alt={getHeroByID(hero.hero_id).localized_name}
+                          className="scoreboard-size"
                         ></img>
                         <div className="subtext minor">
                           <p className="green">
