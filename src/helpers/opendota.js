@@ -32,7 +32,7 @@ const getRecentMatches = async (accountID) => {
 
 const getFriends = async (accountID, dayLimit) => {
   const response = await fetch(
-    `https://api.opendota.com/api/players/${accountID}/peers?limit=${dayLimit}`,
+    `https://api.opendota.com/api/players/${accountID}/peers?date=${dayLimit}`,
   )
   const data = await response.json()
   return data
