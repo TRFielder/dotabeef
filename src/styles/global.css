@@ -3,9 +3,13 @@
     max-width: 1200px;
     font-size: 14px;
     font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-    background: #1C242D;
+
     color: white;
     vertical-align: baseline;
+}
+
+body {
+    background: #1C242D;
 }
 
 div, h1, small, dl, dd, dt, span {
@@ -37,6 +41,10 @@ section header small {
     text-shadow: none;
 }
 
+table {
+    border-spacing: 0;
+}
+
 td {
     text-align: center;
     vertical-align: middle;
@@ -57,6 +65,18 @@ tr {
     text-decoration: none;
 }
 
+.gold {
+    color: #FBB829 !important;
+}
+
 .scoreboard-size {
     max-height: 36px;
+}
+
+.r-table > tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.04);
+}
+
+.r-table > tbody tr:hover, .teamscore-table > tbody tr:hover {
+    background-color: rgba(208, 208, 208, 0.24) !important;
 }

@@ -22,11 +22,19 @@ function TeamScore(props) {
   const getHeroByID = (heroID) =>
     props.Heroes.find((hero) => hero.id === parseInt(heroID, 10))
 
+  const calcHeroDmgHeal = (value) => {
+    if (value === 0) return 0
+    if (value < 1000) return value
+    return `${Math.round(value / 100) / 10}k`
+  }
+
   return (
     <div className="TeamScore">
       {players !== [] ? (
         <section className={props.team}>
-          <header>{props.team}</header>
+          <header className={props.team === 'The Radiant' ? 'green' : 'red'}>
+            {props.team}
+          </header>
           <article className="TeamScore-table">
             <table className={`teamscore-table ${props.team}`}>
               <thead>
@@ -37,7 +45,7 @@ function TeamScore(props) {
                   <th>K</th>
                   <th>D</th>
                   <th>A</th>
-                  <th>NET</th>
+                  <th className="gold">NET</th>
                   <th className="hide-mobile">LH / DN</th>
                   <th className="hide-mobile">GPM / XPM</th>
                   <th className="hide-mobile">DMG</th>
@@ -46,35 +54,60 @@ function TeamScore(props) {
                   <th className="hide-mobile">Wards</th>
                 </tr>
               </thead>
-              {players.map((player) => (
-                <tr key={player.player_slot}>
-                  <td>
-                    <img
-                      src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
-                        getHeroByID(player.hero_id).name.split(
-                          'npc_dota_hero_',
-                        )[1]
-                      }.png?`}
-                      alt={getHeroByID(player.hero_id).localized_name}
-                      className="scoreboard-size"
-                    ></img>
-                  </td>
-                  <td>
-                    {'personaname' in player ? (
-                      <Link
-                        to={`../../players/${player.account_id}`}
-                        className={
-                          props.team === 'The Radiant' ? 'green' : 'red'
-                        }
-                      >
-                        {player.personaname}
-                      </Link>
-                    ) : (
-                      'Anonymous'
-                    )}
-                  </td>
-                </tr>
-              ))}
+              <tbody>
+                {players.map((player) => (
+                  <tr key={player.player_slot}>
+                    <td>
+                      <img
+                        src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
+                          getHeroByID(player.hero_id).name.split(
+                            'npc_dota_hero_',
+                          )[1]
+                        }.png?`}
+                        alt={getHeroByID(player.hero_id).localized_name}
+                        className="scoreboard-size"
+                      ></img>
+                    </td>
+
+                    <td>
+                      {'personaname' in player ? (
+                        <Link
+                          to={`../../players/${player.account_id}`}
+                          className={
+                            props.team === 'The Radiant' ? 'green' : 'red'
+                          }
+                        >
+                          {player.personaname}
+                        </Link>
+                      ) : (
+                        'Anonymous'
+                      )}
+                    </td>
+
+                    <td className="hide-mobile">{player.level}</td>
+
+                    <td>{player.kills}</td>
+
+                    <td>{player.deaths}</td>
+
+                    <td>{player.assists}</td>
+
+                    <td className="gold">{player.net_worth}</td>
+
+                    <td className="hide-mobile">{`${player.last_hits} / ${player.denies}`}</td>
+
+                    <td className="hide-mobile">{`${player.gold_per_min} / ${player.xp_per_min}`}</td>
+
+                    <td className="hide-mobile">
+                      {calcHeroDmgHeal(player.hero_damage)}
+                    </td>
+
+                    <td className="hide-mobile">
+                      {calcHeroDmgHeal(player.hero_healing)}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </article>
         </section>

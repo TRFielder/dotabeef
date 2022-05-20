@@ -4,3 +4,11 @@
         display: none
     }
 }
+
+.teamscore-table.Radiant > tbody tr:nth-child(odd){
+    background-color: rgba(146,165,37,0.12);
+}
+
+.teamscore-table.Dire > tbody tr:nth-child(odd){
+    background-color: rgba(194,60,42,0.12);
+}
