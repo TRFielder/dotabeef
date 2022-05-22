@@ -47,7 +47,6 @@ function AdvantagePlot(props) {
         <article>
           <div className="button-bar">
             <button
-              className="active"
               id="expBtn"
               type="button"
               onClick={() => {
@@ -58,6 +57,7 @@ function AdvantagePlot(props) {
             </button>
 
             <button
+              className="active"
               id="goldBtn"
               type="button"
               onClick={() => {
