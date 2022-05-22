@@ -32,8 +32,8 @@ function TeamScore(props) {
     <div className="TeamScore">
       {players !== [] ? (
         <section className={props.team}>
-          <header className={props.team === 'The Radiant' ? 'green' : 'red'}>
-            {props.team}
+          <header className={props.team === 'The-Radiant' ? 'green' : 'red'}>
+            {props.team.replace('-', ' ')}
           </header>
           <article className="TeamScore-table">
             <table className={`teamscore-table ${props.team}`}>
