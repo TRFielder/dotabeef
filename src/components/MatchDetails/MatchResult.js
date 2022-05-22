@@ -5,6 +5,7 @@ import * as opendota from '../../helpers/opendota'
 import MatchBanner from './MatchBanner'
 import MatchScoreboard from './MatchScoreboard'
 import TeamScore from './TeamScore'
+import AdvantagePlot from './AdvantagePlot'
 
 function MatchResult(props) {
   MatchResult.propTypes = {
@@ -40,6 +41,7 @@ function MatchResult(props) {
               team="The-Dire"
               Heroes={props.Heroes}
             />
+            <AdvantagePlot matchData={matchData} />
           </div>
         </>
       )}
