@@ -24,47 +24,83 @@ function AdvantagePlot(props) {
     setGoldData([...props.matchData.radiant_gold_adv])
   }, [props.matchData])
 
-  function changeGraphDisplay() {
-    setExpGraph(!expGraph)
+  function showExpGraph() {
+    setExpGraph(true)
+    document.getElementById('goldBtn').classList.toggle('active')
+    document.getElementById('expBtn').classList.toggle('active')
+  }
+
+  function showGoldGraph() {
+    setExpGraph(false)
+    document.getElementById('goldBtn').classList.toggle('active')
+    document.getElementById('expBtn').classList.toggle('active')
   }
 
   return ExpData === [] && GoldData === [] ? (
     <p>Waiting for data!</p>
   ) : (
-    <div className="rechart">
-      <button type="button" onClick={() => changeGraphDisplay()}>
-        Change display!
-      </button>
-      <ResponsiveContainer width="95%" height={250}>
-        {expGraph ? (
-          <LineChart width={650} height={250} data={ExpData}>
-            {
-              // Interval = {4} makes the interval every 5th array element, so every 5 minutes
-            }
-            <XAxis unit=":00" domain={[0, 'dataMax']} interval={4} />
-            <YAxis />
-            <CartesianGrid fill="#242F39" />
-            <Line
-              type="monotone"
-              dataKey={(v) => v}
-              stroke="#30BFD2"
-              dot={false}
-            />
-          </LineChart>
-        ) : (
-          <LineChart width={350} height={250} data={GoldData}>
-            <XAxis unit=":00" domain={[0, 'dataMax']} interval={4} />
-            <YAxis />
-            <CartesianGrid fill="#242F39" />
-            <Line
-              type="monotone"
-              dataKey={(v) => v}
-              stroke="#FBB829"
-              dot={false}
-            />
-          </LineChart>
-        )}
-      </ResponsiveContainer>
+    <div className="AdvantagePlot">
+      <section className="rechart">
+        <header>
+          Team Advantages <small>Per Minute</small>
+        </header>
+        <article>
+          <div className="button-bar">
+            <button
+              className="active"
+              id="expBtn"
+              type="button"
+              onClick={() => {
+                showExpGraph()
+              }}
+            >
+              Experience
+            </button>
+
+            <button
+              id="goldBtn"
+              type="button"
+              onClick={() => {
+                showGoldGraph()
+              }}
+            >
+              Net Worth
+            </button>
+          </div>
+          <ResponsiveContainer width="95%" height={250}>
+            {expGraph ? (
+              <LineChart width={650} height={250} data={ExpData}>
+                {
+                  // Interval = {4} makes the interval every 5th array element, so every 5 minutes
+                }
+                <XAxis unit=":00" domain={[0, 'dataMax']} interval={4} />
+                <YAxis />
+                <CartesianGrid fill="#1C242D" />
+                <Line
+                  type="monotone"
+                  dataKey={(v) => v}
+                  stroke="#30BFD2"
+                  dot={false}
+                  strokeWidth={3}
+                />
+              </LineChart>
+            ) : (
+              <LineChart width={350} height={250} data={GoldData}>
+                <XAxis unit=":00" domain={[0, 'dataMax']} interval={4} />
+                <YAxis />
+                <CartesianGrid fill="#1C242D" />
+                <Line
+                  type="monotone"
+                  dataKey={(v) => v}
+                  stroke="#FBB829"
+                  dot={false}
+                  strokeWidth={3}
+                />
+              </LineChart>
+            )}
+          </ResponsiveContainer>
+        </article>
+      </section>
     </div>
   )
 }
