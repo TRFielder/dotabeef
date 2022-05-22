@@ -68,16 +68,17 @@ function RecentMatches(props) {
                       ).playerTeam,
                       match.radiant_win,
                     ) ? (
-                      <td>
+                      <td className="subtext minor">
                         <Link
                           to={`../../matches/${match.match_id}`}
                           className="green"
                         >
                           Victory
                         </Link>
+                        <p>{utilities.timeSinceMatch(match.start_time)}</p>
                       </td>
                     ) : (
-                      <td>
+                      <td className="subtext minor">
                         {' '}
                         <Link
                           to={`../../matches/${match.match_id}`}
@@ -85,6 +86,7 @@ function RecentMatches(props) {
                         >
                           Defeat
                         </Link>
+                        <p>{utilities.timeSinceMatch(match.start_time)}</p>
                       </td>
                     )}
                     <td>{utilities.getDuration(match.duration)}</td>

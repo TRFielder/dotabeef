@@ -138,6 +138,15 @@ function getGameMode(mode) {
   }
 }
 
+const timeSinceMatch = (date) => {
+  const lastMatchMs = date * 1000
+  const lastMatch = new Date(lastMatchMs)
+  const today = new Date()
+  const dayDiff = Math.round((today - lastMatch) / (1000 * 3600 * 24))
+  const hourDiff = Math.round((today - lastMatch) / (1000 * 3600))
+  return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
+}
+
 export {
   getDuration,
   checkPlayerWin,
@@ -149,4 +158,5 @@ export {
   getTowerStatus,
   getBarracksStatus,
   getGameMode,
+  timeSinceMatch,
 }

@@ -31,13 +31,13 @@ function MatchResult(props) {
             <TeamScore
               key="radiant"
               matchData={matchData}
-              team="The Radiant"
+              team="The-Radiant"
               Heroes={props.Heroes}
             />
             <TeamScore
               key="dire"
               matchData={matchData}
-              team="The Dire"
+              team="The-Dire"
               Heroes={props.Heroes}
             />
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import * as opendota from '../../helpers/opendota'
+import * as utilities from '../../helpers/utilities'
 import '../../styles/MostPlayedHeroes.css'
 
 function MostPlayedHeroes(props) {
@@ -17,15 +18,6 @@ function MostPlayedHeroes(props) {
       setMostPlayed([...result])
     })
   }, [ID])
-
-  const timeSinceLastMatch = (date) => {
-    const lastMatchMs = date * 1000
-    const lastMatch = new Date(lastMatchMs)
-    const today = new Date()
-    const dayDiff = Math.round((today - lastMatch) / (1000 * 3600 * 24))
-    const hourDiff = Math.round((today - lastMatch) / (1000 * 3600))
-    return dayDiff >= 1 ? `${dayDiff} days ago` : `${hourDiff} hours ago`
-  }
 
   const getHeroByID = (heroID) =>
     props.Heroes.find((hero) => hero.id === parseInt(heroID, 10))
@@ -62,7 +54,7 @@ function MostPlayedHeroes(props) {
                           <p className="green">
                             {getHeroByID(hero.hero_id).localized_name}
                           </p>
-                          <p>{timeSinceLastMatch(hero.last_played)}</p>
+                          <p>{utilities.timeSinceMatch(hero.last_played)}</p>
                         </div>
                       </td>
                       <td className="gamesPlayedAsHero">{hero.games}</td>

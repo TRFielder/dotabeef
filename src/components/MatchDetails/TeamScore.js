@@ -12,7 +12,7 @@ function TeamScore(props) {
   const [players, setPlayers] = useState([])
 
   useEffect(() => {
-    if (props.team === 'The Radiant') {
+    if (props.team === 'The-Radiant') {
       setPlayers([...props.matchData.players.slice(0, 5)])
     } else {
       setPlayers([...props.matchData.players.slice(5, 10)])
@@ -74,7 +74,7 @@ function TeamScore(props) {
                         <Link
                           to={`../../players/${player.account_id}`}
                           className={
-                            props.team === 'The Radiant' ? 'green' : 'red'
+                            props.team === 'The-Radiant' ? 'green' : 'red'
                           }
                         >
                           {player.personaname}
@@ -104,6 +104,20 @@ function TeamScore(props) {
 
                     <td className="hide-mobile">
                       {calcHeroDmgHeal(player.hero_healing)}
+                    </td>
+
+                    <td className="hide-mobile">
+                      {calcHeroDmgHeal(player.tower_damage)}
+                    </td>
+
+                    <td className="hide-mobile">
+                      <span className="color-observer-ward">
+                        {player.obs_placed}
+                      </span>{' '}
+                      /{' '}
+                      <span className="color-sentry-ward">
+                        {player.sen_placed}
+                      </span>
                     </td>
                   </tr>
                 ))}

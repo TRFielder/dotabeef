@@ -21,9 +21,14 @@
 .Home > input {
     height: 20px;
     margin: 5px;
+    color: black;
 }
 
 .Home > a {
     height: 20px;
     margin: 5px;
+}
+
+.Home > a > button {
+    color: black;
 }

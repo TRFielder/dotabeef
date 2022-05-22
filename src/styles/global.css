@@ -69,6 +69,14 @@ tr {
     color: #FBB829 !important;
 }
 
+.color-observer-ward {
+    color: #F2CC67 !important;
+}
+
+.color-sentry-ward {
+    color: #30BFD2 !important;
+}
+
 .scoreboard-size {
     max-height: 36px;
 }
