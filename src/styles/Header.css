@@ -16,6 +16,7 @@
 
 .header-profile-link {
     margin: 0;
+    display: none; /* This is display: none until I implement passport login with steam openID */
 }
 
 .inner-header a {

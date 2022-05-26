@@ -6,6 +6,7 @@ import MatchBanner from './MatchBanner'
 import MatchScoreboard from './MatchScoreboard'
 import TeamScore from './TeamScore'
 import AdvantagePlot from './AdvantagePlot'
+import Comments from './Comments'
 
 function MatchResult(props) {
   MatchResult.propTypes = {
@@ -49,6 +50,7 @@ function MatchResult(props) {
             />
             <AdvantagePlot matchData={matchData} />
           </div>
+          <Comments />
         </>
       )}
     </div>

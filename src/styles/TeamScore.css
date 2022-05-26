@@ -3,11 +3,19 @@
     .hide-mobile {
         display: none
     }
+
+    .item-thumbnail {
+        max-width: 35px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     div.hide-desktop {
         display: none;
+    }
+
+    .item-thumbnail {
+        max-width: 40px;
     }
 }
 
@@ -24,9 +32,7 @@
     background-color: rgba(194,60,42,0.12);
 }
 
-.item-thumbnail {
-    max-width: 40px;
-}
+
 
 .inventory {
     display: flex;

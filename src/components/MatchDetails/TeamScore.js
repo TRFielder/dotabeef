@@ -185,13 +185,13 @@ function TeamScore(props) {
                       </span>
                     </td>
                     <td className="hide-mobile items inventory">
-                      <div className="main-inventory-items">
+                      <div className="main-inventory-items items hide-mobile">
                         {player.item_0 !== 0 ? (
                           <img
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_0).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_0).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
@@ -202,7 +202,7 @@ function TeamScore(props) {
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_1).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_1).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
@@ -213,7 +213,7 @@ function TeamScore(props) {
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_2).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_2).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
@@ -224,7 +224,7 @@ function TeamScore(props) {
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_3).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_3).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
@@ -235,7 +235,7 @@ function TeamScore(props) {
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_4).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_4).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
@@ -246,20 +246,20 @@ function TeamScore(props) {
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_5).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_5).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
                           <div className="no-item"></div>
                         )}
                       </div>
-                      <div className="neutral-item">
+                      <div className="neutral-item items hide-mobile">
                         {player.item_neutral !== 0 ? (
                           <img
                             src={`http://cdn.dota2.com${
                               getItemById(player.item_neutral).img
                             }`}
-                            alt="test text"
+                            alt={getItemById(player.item_neutral).dname}
                             className="item-thumbnail"
                           ></img>
                         ) : (
