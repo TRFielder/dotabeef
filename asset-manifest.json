@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/dotabeef/static/css/main.b2171203.css",
-    "main.js": "/dotabeef/static/js/main.808d7912.js",
+    "main.css": "/dotabeef/static/css/main.054abe68.css",
+    "main.js": "/dotabeef/static/js/main.79fe8724.js",
     "index.html": "/dotabeef/index.html",
-    "main.b2171203.css.map": "/dotabeef/static/css/main.b2171203.css.map",
-    "main.808d7912.js.map": "/dotabeef/static/js/main.808d7912.js.map"
+    "main.054abe68.css.map": "/dotabeef/static/css/main.054abe68.css.map",
+    "main.79fe8724.js.map": "/dotabeef/static/js/main.79fe8724.js.map"
   },
   "entrypoints": [
-    "static/css/main.b2171203.css",
-    "static/js/main.808d7912.js"
+    "static/css/main.054abe68.css",
+    "static/js/main.79fe8724.js"
   ]
 }
