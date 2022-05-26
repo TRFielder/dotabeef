@@ -10,6 +10,8 @@ import AdvantagePlot from './AdvantagePlot'
 function MatchResult(props) {
   MatchResult.propTypes = {
     Heroes: PropTypes.array,
+    Items: PropTypes.object,
+    ItemIds: PropTypes.object,
   }
   const [matchData, setMatchData] = useState(null)
   const { MatchID } = useParams()
@@ -34,12 +36,16 @@ function MatchResult(props) {
               matchData={matchData}
               team="The-Radiant"
               Heroes={props.Heroes}
+              Items={props.Items}
+              ItemIds={props.ItemIds}
             />
             <TeamScore
               key="dire"
               matchData={matchData}
               team="The-Dire"
               Heroes={props.Heroes}
+              Items={props.Items}
+              ItemIds={props.ItemIds}
             />
             <AdvantagePlot matchData={matchData} />
           </div>

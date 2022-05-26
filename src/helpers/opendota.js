@@ -84,6 +84,20 @@ const getMatchData = async (matchID) => {
   return data
 }
 
+const getItemIDs = async () => {
+  const response = await fetch(
+    'https://api.opendota.com/api/constants/item_ids',
+  )
+  const data = await response.json()
+  return data
+}
+
+const getItems = async () => {
+  const response = await fetch('https://api.opendota.com/api/constants/items')
+  const data = await response.json()
+  return data
+}
+
 export {
   getPlayersByName,
   getPlayerData,
@@ -95,4 +109,6 @@ export {
   getHeroes,
   getMatchesAsHero,
   getMatchData,
+  getItemIDs,
+  getItems,
 }

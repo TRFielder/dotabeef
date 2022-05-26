@@ -5,6 +5,13 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    div.hide-desktop {
+        display: none;
+    }
+}
+
+
 .teamscore-table {
     width: 100%;
 }
@@ -15,4 +22,25 @@
 
 .teamscore-table.The-Dire > tbody tr:nth-child(odd){
     background-color: rgba(194,60,42,0.12);
+}
+
+.item-thumbnail {
+    max-width: 40px;
+}
+
+.inventory {
+    display: flex;
+    flex-direction: row;
+}
+
+.neutral-item {
+    margin-right: 10px;
+}
+
+.neutral-item > img {
+    border-radius: 50%;
+}
+
+.no-item {
+    display: none;
 }

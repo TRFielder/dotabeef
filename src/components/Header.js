@@ -8,6 +8,7 @@ function Header() {
         <Link to="/">
           <p className="header-nav-logo">Dotabeef</p>
         </Link>
+        <p className="header-profile-link">My Profile</p>
       </div>
     </div>
   )

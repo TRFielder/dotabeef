@@ -8,8 +8,18 @@
 .Header .inner-header {
     background: inherit;
     background-color: transparent;
-    margin: auto;
+    margin: 0;
     max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-profile-link {
+    margin: 0;
+}
+
+.inner-header a {
+    margin: 0;
 }
 
 .header-nav-logo {

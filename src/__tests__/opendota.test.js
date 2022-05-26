@@ -52,4 +52,10 @@ describe('Testing opendota API functions', () => {
     const data = await opendota.getPlayerWinLoss('22984464')
     expect(Object.keys(data)).toEqual(['win', 'lose'])
   })
+
+  test('getItems returns an array of objects, and searching for item ID 141 returns the item daedalus', async () => {
+    const itemIds = await opendota.getItemIDs()
+    const items = await opendota.getItems()
+    expect(items[itemIds[141]].dname).toEqual('Daedalus')
+  })
 })
