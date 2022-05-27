@@ -2,6 +2,7 @@ import '../../styles/Comments.css'
 import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { getComments } from '../../helpers/firebaseFuncs'
+import { dateFromUnixTime } from '../../helpers/utilities'
 
 function Comments(props) {
   Comments.propTypes = {
@@ -24,12 +25,30 @@ function Comments(props) {
         </header>
         <article>
           {UserComments === [] ? (
-            <div>Loading comments...</div>
+            <div>No comments yet!</div>
           ) : (
-            <>
-              <div className="comment-wrapper">Hello there!</div>
-              <div className="comment-wrapper">{`Comment ${props.MatchID} goes here!`}</div>
-            </>
+            <table className="comment-table">
+              <thead>
+                <tr>
+                  <th className="comment-user-name">User</th>
+                  <th className="comment-text">Comment</th>
+                </tr>
+              </thead>
+              <tbody>
+                {UserComments.map((comment) => (
+                  <tr key={comment.id} className="comment-wrapper">
+                    <td className="comment-user-name">
+                      {comment.name}
+                      <div className="comment-timestamp">
+                        {dateFromUnixTime(comment.time.seconds)}
+                      </div>
+                    </td>
+
+                    <td className="comment-text">{comment.comment}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
         </article>
       </section>

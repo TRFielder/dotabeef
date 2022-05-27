@@ -18,6 +18,7 @@ async function getComments(matchID) {
   const comments = []
   querySnapshot.forEach((doc) => {
     comments.push({
+      id: doc.id,
       name: doc.data().name,
       comment: doc.data().comment,
       time: doc.data().time,
