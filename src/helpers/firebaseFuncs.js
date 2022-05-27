@@ -1,33 +1,29 @@
-import { initializeApp } from 'firebase/app'
 import {
-  getFirestore,
   collection,
   query,
   where,
-  orderBy,
   getDocs,
+  getFirestore,
 } from 'firebase/firestore'
-import firebaseConfig from './firebase-config'
-
-initializeApp(firebaseConfig)
+import './firebase-config'
 
 async function getComments(matchID) {
   const commentsQuery = query(
     collection(getFirestore(), 'comments'),
-    where('matchID', '==', `${matchID}`),
-    orderBy('time', 'asc'),
+    where('matchID', '==', matchID),
   )
 
-  const comments = []
-
   const querySnapshot = await getDocs(commentsQuery)
-  if (querySnapshot.empty) {
-    return comments
-  }
 
+  const comments = []
   querySnapshot.forEach((doc) => {
-    comments.push(doc.data())
+    comments.push({
+      name: doc.data().name,
+      comment: doc.data().comment,
+      time: doc.data().time,
+    })
   })
+
   return comments
 }
 

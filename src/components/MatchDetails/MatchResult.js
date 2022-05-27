@@ -50,7 +50,7 @@ function MatchResult(props) {
             />
             <AdvantagePlot matchData={matchData} />
           </div>
-          <Comments />
+          <Comments MatchID={MatchID} />
         </>
       )}
     </div>

@@ -1,4 +1,5 @@
 // Your web app's Firebase configuration
+import { initializeApp } from 'firebase/app'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyAgtHWx1l-cnJaRs839Q6YNa4vVloOvDQQ',
@@ -11,7 +12,7 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-
+const fireBaseApp = initializeApp(firebaseConfig)
 // const analytics = getAnalytics(app)
 
-export { firebaseConfig }
+export { fireBaseApp }

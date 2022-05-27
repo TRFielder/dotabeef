@@ -26,14 +26,14 @@ function AdvantagePlot(props) {
 
   function showExpGraph() {
     setExpGraph(true)
-    document.getElementById('goldBtn').classList.toggle('active')
-    document.getElementById('expBtn').classList.toggle('active')
+    document.getElementById('goldBtn').classList.remove('active')
+    document.getElementById('expBtn').classList.add('active')
   }
 
   function showGoldGraph() {
     setExpGraph(false)
-    document.getElementById('goldBtn').classList.toggle('active')
-    document.getElementById('expBtn').classList.toggle('active')
+    document.getElementById('goldBtn').classList.add('active')
+    document.getElementById('expBtn').classList.remove('active')
   }
 
   return ExpData === [] && GoldData === [] ? (
