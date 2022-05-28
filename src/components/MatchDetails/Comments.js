@@ -7,15 +7,21 @@ import { dateFromUnixTime } from '../../helpers/utilities'
 function Comments(props) {
   Comments.propTypes = {
     MatchID: PropTypes.string,
+    newComments: PropTypes.number,
   }
 
   const [UserComments, setUserComments] = useState([])
+  const [newComments, setNewComments] = useState([])
 
   useEffect(() => {
     getComments(props.MatchID).then((result) => {
       setUserComments([...result])
     })
   }, [props.MatchID])
+
+  useEffect(() => {
+    setNewComments([...(newComments + 1)])
+  }, [props.newComments])
 
   return (
     <div className="Comments">

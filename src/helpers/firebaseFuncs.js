@@ -3,6 +3,7 @@ import {
   query,
   where,
   getDocs,
+  addDoc,
   getFirestore,
 } from 'firebase/firestore'
 import './firebase-config'
@@ -28,4 +29,13 @@ async function getComments(matchID) {
   return comments
 }
 
-export { getComments }
+async function postComment(matchID, name, comment) {
+  await addDoc(collection(getFirestore(), 'comments'), {
+    name,
+    matchID,
+    comment,
+    time: new Date(),
+  })
+}
+
+export { getComments, postComment }

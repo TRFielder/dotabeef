@@ -17,12 +17,17 @@ function MatchResult(props) {
   }
   const [matchData, setMatchData] = useState(null)
   const { MatchID } = useParams()
+  const [newComments, setNewComments] = useState(0)
 
   useEffect(() => {
     opendota.getMatchData(MatchID).then((result) => {
       setMatchData(result)
     })
   }, [MatchID])
+
+  function updateComments() {
+    setNewComments(newComments + 1)
+  }
 
   return (
     <div className="MatchResult">
@@ -51,8 +56,13 @@ function MatchResult(props) {
             />
             <AdvantagePlot matchData={matchData} />
           </div>
-          <Comments MatchID={MatchID} />
-          <CommentForm />
+          <Comments MatchID={MatchID} newComments={newComments} />
+          <CommentForm
+            MatchID={MatchID}
+            updateComments={() => {
+              updateComments()
+            }}
+          />
         </>
       )}
     </div>
