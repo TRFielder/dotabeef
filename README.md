@@ -1,8 +1,16 @@
 # DotaBeef
 
-This is a project I will develop as my solution to the [Javascript Final Project](https://www.theodinproject.com/lessons/node-path-javascript-javascript-final-project) on The Odin Project's full stack Javascript path
+This is a project I have developed as my solution to the [Javascript Final Project](https://www.theodinproject.com/lessons/node-path-javascript-javascript-final-project) on The Odin Project's full stack Javascript path
 
-I will aim to use the [OpenDota API](https://docs.opendota.com/) to replicate the core functionality of [dotabuff](https://dotabuff.com) as closely as possible
+Using the [OpenDota API](https://docs.opendota.com/) I have replicated the core functionality of [dotabuff](https://dotabuff.com) as closely as possible. Users can search for a player by name and find match details, including the statistics for each player in game and their item build (in image form).
+
+I have done my best to minimise the amount of API calls as the OpenDota API is rate-limited to 60 calls/minute, and this presented some challenges particularly during testing in order to avoid hitting that limit.
+
+Users can also submit comments on matches which are stored in Cloud Firestore and presented to all viewers of a particular match.
+
+If you aren't familiar with Dota 2 and don't know where to start looking through this project, please take a look at my profile [here](http://tomfielder.co.uk/dotabeef/#/players/22984464)
+
+and an [example match](http://tomfielder.co.uk/dotabeef/#/matches/6579013984)
 
 ## Available Scripts
 
