@@ -1,0 +1,16 @@
+.comment-form form input {
+  color: black;
+}
+
+.comment-form form input#user-comment {
+  width: 400px;
+}
+
+.comment-form button {
+  color: black;
+  margin: 0;
+}
+
+.comment-form {
+  display: flex;
+}

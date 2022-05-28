@@ -7,6 +7,7 @@ import MatchScoreboard from './MatchScoreboard'
 import TeamScore from './TeamScore'
 import AdvantagePlot from './AdvantagePlot'
 import Comments from './Comments'
+import CommentForm from './CommentForm'
 
 function MatchResult(props) {
   MatchResult.propTypes = {
@@ -51,6 +52,7 @@ function MatchResult(props) {
             <AdvantagePlot matchData={matchData} />
           </div>
           <Comments MatchID={MatchID} />
+          <CommentForm />
         </>
       )}
     </div>
