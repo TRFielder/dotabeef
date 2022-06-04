@@ -8,9 +8,9 @@ I have done my best to minimise the amount of API calls as the OpenDota API is r
 
 Users can also submit comments on matches which are stored in Cloud Firestore and presented to all viewers of a particular match.
 
-If you aren't familiar with Dota 2 and don't know where to start looking through this project, please take a look at my profile [here](http://tomfielder.co.uk/dotabeef/#/players/22984464)
+If you aren't familiar with Dota 2 and don't know where to start looking through this project, please take a look at my profile [here](http://trfielder.github.io/dotabeef/#/players/22984464)
 
-and an [example match](http://tomfielder.co.uk/dotabeef/#/matches/6579013984)
+and an [example match](http://trfielder.github.io/dotabeef/#/matches/6579013984)
 
 ## Available Scripts
 
