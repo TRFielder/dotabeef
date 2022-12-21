@@ -37,37 +37,38 @@ function MostPlayedHeroes(props) {
                 <th>Wins</th>
                 <th>Win %</th>
               </tr>
-              {MostPlayed.length && props.Heroes.length
-                ? MostPlayed.slice(0, 10).map((hero) => (
-                    <tr className="r-row" key={hero.hero_id}>
-                      <td className="image-container image-container-hero image-container-icon">
-                        <img
-                          src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
-                            getHeroByID(hero.hero_id).name.split(
-                              'npc_dota_hero_',
-                            )[1]
-                          }.png?`}
-                          alt={getHeroByID(hero.hero_id).localized_name}
-                          className="scoreboard-size"
-                        ></img>
-                        <div className="subtext minor">
-                          <p className="green">
-                            {getHeroByID(hero.hero_id).localized_name}
-                          </p>
-                          <p>{utilities.timeSinceMatch(hero.last_played)}</p>
-                        </div>
-                      </td>
-                      <td className="gamesPlayedAsHero">{hero.games}</td>
-                      <td className="winsAsHero">{hero.win}</td>
-                      <td className="winrateAsHero">
-                        {' '}
-                        {`${
-                          Math.round((hero.win / hero.games) * 100 * 100) / 100
-                        }%`}
-                      </td>
-                    </tr>
-                  ))
-                : 'Still loading'}
+              {MostPlayed.length && props.Heroes.length ? (
+                MostPlayed.slice(0, 10).map((hero) => (
+                  <tr className="r-row" key={hero.hero_id}>
+                    <td className="image-container image-container-hero image-container-icon">
+                      <img
+                        src={`http://cdn.dota2.com/apps/dota2/images/dota_react/heroes/${
+                          getHeroByID(hero.hero_id).name.split(
+                            'npc_dota_hero_',
+                          )[1]
+                        }.png?`}
+                        alt={getHeroByID(hero.hero_id).localized_name}
+                        className="scoreboard-size"
+                      ></img>
+                      <div className="subtext minor">
+                        <p className="green">
+                          {getHeroByID(hero.hero_id).localized_name}
+                        </p>
+                        <p>{utilities.timeSinceMatch(hero.last_played)}</p>
+                      </div>
+                    </td>
+                    <td className="gamesPlayedAsHero">{hero.games}</td>
+                    <td className="winsAsHero">{hero.win}</td>
+                    <td className="winrateAsHero">
+                      {`${
+                        Math.round((hero.win / hero.games) * 100 * 100) / 100
+                      }%`}
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>Still loading</tr>
+              )}
             </tbody>
           </table>
         </article>

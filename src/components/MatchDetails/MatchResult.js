@@ -54,7 +54,12 @@ function MatchResult(props) {
               Items={props.Items}
               ItemIds={props.ItemIds}
             />
-            <AdvantagePlot matchData={matchData} />
+            {matchData.radiant_xp_adv === null ||
+            matchData.dire_xp_adv === null ? (
+              <p>No Exp advantage data available for this match</p>
+            ) : (
+              <AdvantagePlot matchData={matchData} />
+            )}
           </div>
           <Comments MatchID={MatchID} newComments={newComments} />
           <CommentForm
